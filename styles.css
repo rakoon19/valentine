@@ -1,0 +1,689 @@
+/* ==========================================
+   Valentine's Day Garden - Main Styles
+   ========================================== */
+
+/* ----- Reset & Base Styles ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(180deg, #87CEEB 0%, #98D8C8 50%, #90EE90 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><circle cx="8" cy="8" r="6" fill="%23FF69B4"/></svg>') 8 8, auto;
+    transition: background 0.5s ease;
+}
+
+/* Dark mode background */
+body.dark-mode {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+
+/* ----- Dark Mode Toggle Button ----- */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.dark-mode-toggle:active {
+    transform: rotate(20deg) scale(0.95);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: rgba(30, 30, 30, 0.9);
+}
+
+
+/* ----- Garden Ground & Grass ----- */
+.ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(180deg, #7CB342 0%, #558B2F 100%);
+    z-index: 1;
+    border-top: 4px solid #33691E;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .ground {
+    background: linear-gradient(180deg, #2d5016 0%, #1b3409 100%);
+    border-top: 4px solid #0d1f04;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: repeating-linear-gradient(
+        90deg,
+        #7CB342 0px,
+        #689F38 2px,
+        #7CB342 4px
+    );
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .grass {
+    background: repeating-linear-gradient(
+        90deg,
+        #2d5016 0px,
+        #234011 2px,
+        #2d5016 4px
+    );
+}
+
+
+/* ----- Sky Elements: Clouds ----- */
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    opacity: 0.8;
+    image-rendering: pixelated;
+    animation: float-cloud 20s linear infinite;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .cloud {
+    background: #4a5568;
+    opacity: 0.4;
+}
+
+.cloud-1 {
+    width: 60px;
+    height: 20px;
+    top: 30px;
+    box-shadow: 20px 0 0 white, 40px 0 0 white;
+}
+
+.cloud-2 {
+    width: 80px;
+    height: 24px;
+    top: 80px;
+    box-shadow: 25px 0 0 white, 50px 0 0 white;
+    animation-delay: -10s;
+}
+
+@keyframes float-cloud {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+/* ----- Butterflies ----- */
+.butterflies {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.butterfly {
+    position: absolute;
+    width: 16px;
+    height: 12px;
+    animation: butterfly-fly 8s ease-in-out infinite;
+}
+
+.wing {
+    width: 6px;
+    height: 10px;
+    background: #FF69B4;
+    position: absolute;
+    top: 1px;
+    image-rendering: pixelated;
+}
+
+.wing-left {
+    left: 0;
+    border-radius: 50% 0 0 50%;
+    animation: flap 0.3s ease-in-out infinite;
+}
+
+.wing-right {
+    right: 0;
+    border-radius: 0 50% 50% 0;
+    animation: flap 0.3s ease-in-out infinite 0.15s;
+}
+
+.butterfly-body {
+    width: 4px;
+    height: 12px;
+    background: #8B4513;
+    position: absolute;
+    left: 6px;
+    top: 0;
+    image-rendering: pixelated;
+}
+
+@keyframes flap {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.7);
+    }
+}
+
+@keyframes butterfly-fly {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, -30px);
+    }
+    50% {
+        transform: translate(100px, -10px);
+    }
+    75% {
+        transform: translate(50px, -40px);
+    }
+}
+
+
+/* ----- Garden Flowers ----- */
+.flower-garden {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom center;
+}
+
+/* Different wave speeds for natural look */
+.flower.wave-1 {
+    animation: wave 2.5s ease-in-out infinite;
+}
+
+.flower.wave-2 {
+    animation: wave 3s ease-in-out infinite 0.5s;
+}
+
+.flower.wave-3 {
+    animation: wave 3.5s ease-in-out infinite 1s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(4deg);
+    }
+    75% {
+        transform: rotate(-4deg);
+    }
+}
+
+.stem {
+    width: 6px;
+    background: #4CAF50;
+    margin: 0 auto;
+    position: relative;
+    image-rendering: pixelated;
+    box-shadow: inset 2px 0 0 #2E7D32;
+}
+
+.leaf {
+    width: 12px;
+    height: 8px;
+    background: #4CAF50;
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+.leaf-left {
+    left: -10px;
+    top: 30%;
+    border-radius: 0 50% 50% 0;
+}
+
+.leaf-right {
+    right: -10px;
+    top: 50%;
+    border-radius: 50% 0 0 50%;
+}
+
+.bloom {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: -6px;
+}
+
+.petal {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+.petal-1 { top: 0; left: 12px; }
+.petal-2 { top: 12px; left: 0; }
+.petal-3 { top: 12px; left: 24px; }
+.petal-4 { top: 24px; left: 12px; }
+
+.center { 
+    background: #FFD700; 
+    top: 12px; 
+    left: 12px; 
+    border-radius: 2px;
+    box-shadow: inset 2px 2px 0 #FFA000;
+}
+
+
+/* ----- Main Container ----- */
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----- Pixel Art Cat ----- */
+.cat-container {
+    position: relative;
+    margin-bottom: 20px;
+    animation: cat-bounce 2s ease-in-out infinite;
+}
+
+@keyframes cat-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.cat {
+    width: 160px;
+    margin: 0 auto;
+}
+
+.cat-row {
+    display: flex;
+    justify-content: center;
+    height: 8px;
+}
+
+.cat-pixel {
+    width: 8px;
+    height: 8px;
+    image-rendering: pixelated;
+}
+
+/* Cat colors */
+.orange { background: #FF8C42; }
+.dark-orange { background: #E67E22; }
+.white { background: #FFF; }
+.pink { background: #FFB6C1; }
+.black { background: #2C3E50; }
+.none { background: transparent; }
+
+
+/* ----- Speech Bubble ----- */
+.speech-bubble {
+    position: relative;
+    background: white;
+    border: 4px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.2);
+    max-width: 90%;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .speech-bubble {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: #FF69B4;
+}
+
+/* Speech bubble arrow - bottom */
+.speech-bubble:before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #333;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .speech-bubble:before {
+    border-top-color: #FF69B4;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 16px solid white;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .speech-bubble:after {
+    border-top-color: rgba(30, 30, 30, 0.95);
+}
+
+.speech-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .speech-text {
+    color: #f0f0f0;
+}
+
+@media (max-width: 480px) {
+    .speech-text {
+        font-size: 10px;
+    }
+}
+
+
+/* ----- Heart Message ----- */
+.heart-message {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: #FF1493;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.5);
+}
+
+@media (max-width: 480px) {
+    .heart-message {
+        font-size: 16px;
+    }
+}
+
+
+/* ----- Action Buttons ----- */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    padding: 15px 25px;
+    border: 4px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 6px 6px 0 #333;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+@media (max-width: 480px) {
+    button {
+        font-size: 10px;
+        padding: 12px 20px;
+    }
+}
+
+button:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 #333;
+}
+
+button:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0 0 0 #333;
+}
+
+#yesBtn {
+    background: #FFD700;
+    color: #333;
+    animation: yes-glow 1.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes yes-glow {
+    0%, 100% {
+        background: #FFD700;
+    }
+    50% {
+        background: #FFA000;
+    }
+}
+
+#noBtn {
+    background: #FF6B6B;
+    color: white;
+}
+
+
+/* ----- Celebration Box ----- */
+.celebration {
+    display: none;
+    text-align: center;
+    background: white;
+    border: 4px solid #FF69B4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(255,105,180,0.3);
+    animation: celebrate 1s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .celebration {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 8px 16px rgba(255,105,180,0.5);
+}
+
+.celebration-text {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: #FF1493;
+    line-height: 1.6;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .celebration-text {
+    color: #FF69B4;
+}
+
+@media (max-width: 480px) {
+    .celebration-text {
+        font-size: 16px;
+    }
+}
+
+@keyframes celebrate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* ----- Sun/Moon ----- */
+.sun {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255,215,0,0.5);
+    animation: sun-pulse 3s ease-in-out infinite;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .sun {
+    background: #f0f0f0;
+    box-shadow: 0 0 30px rgba(240,240,240,0.6);
+}
+
+@keyframes sun-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255,215,0,0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(255,215,0,0.7);
+    }
+}
+
+body.dark-mode .sun {
+    animation: moon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes moon-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(240,240,240,0.6);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px rgba(240,240,240,0.8);
+    }
+}
+
+.sun-ray {
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    background: #FFD700;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .sun-ray {
+    opacity: 0;
+}
+
+
+/* ----- Confetti & Falling Flowers ----- */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    animation: confetti-fall 3s linear infinite;
+    image-rendering: pixelated;
+    z-index: 100;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.falling-flower {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    animation: flower-fall 4s linear infinite;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+@keyframes flower-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+.falling-petal {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    image-rendering: pixelated;
+}

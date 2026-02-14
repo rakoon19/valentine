@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cute Valentine's Day proposal with pixel art">
+    <title>Will You Be My Valentine? 💝</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Dark/Light mode toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <span id="modeIcon">☀️</span>
+    </div>
+
+    <!-- Sun/Moon in sky -->
+    <div class="sun">
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(0deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(45deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(90deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(135deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(180deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(225deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(270deg) translateY(-30px);"></div>
+        <div class="sun-ray" style="transform: translate(-50%, -50%) rotate(315deg) translateY(-30px);"></div>
+    </div>
+
+    <!-- Background clouds -->
+    <div class="clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    </div>
+
+    <!-- Animated butterflies -->
+    <div class="butterflies" id="butterflies"></div>
+
+    <!-- Garden flowers at bottom -->
+    <div class="flower-garden" id="flowers"></div>
+
+    <!-- Ground/grass -->
+    <div class="ground">
+        <div class="grass"></div>
+    </div>
+
+    <!-- Main content area -->
+    <div class="container">
+        <!-- Pixel art cat -->
+        <div class="cat-container">
+            <div class="cat">
+                <!-- Cat ears -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                <div class="cat-row">
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel pink"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel pink"></div>
+                    <div class="cat-pixel orange"></div>
+                </div>
+                
+                <!-- Cat head -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                
+                <!-- Cat eyes -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel black"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel black"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                
+                <!-- Cat nose -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel pink"></div>
+                    <div class="cat-pixel pink"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                
+                <!-- Cat mouth -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                
+                <!-- Cat body -->
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                <div class="cat-row">
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel none"></div>
+                </div>
+                
+                <!-- Cat paws -->
+                <div class="cat-row">
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel none"></div>
+                    <div class="cat-pixel white"></div>
+                    <div class="cat-pixel orange"></div>
+                    <div class="cat-pixel orange"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Speech bubble from cat -->
+        <div class="speech-bubble">
+            <div class="speech-text">
+                Meow meow! 💕<br>
+                Will you be my Valentine?<br>
+                I promise to share my treats! 🐟
+            </div>
+        </div>
+
+        <!-- Heart message -->
+        <div class="heart-message">
+            ❤️ You make my heart purr! ❤️
+        </div>
+
+        <!-- Action buttons -->
+        <div class="buttons">
+            <button id="yesBtn">YES! 😻</button>
+            <button id="noBtn">Maybe? 🤔</button>
+        </div>
+
+        <!-- Success celebration message (hidden initially) -->
+        <div class="celebration" id="celebration">
+            <div class="celebration-text">
+                🎉 PURR-FECT! 🎉<br>
+                *Happy cat noises* 😸<br>
+                You're the best Valentine ever! 💝<br>
+                *Headbumps you affectionately* 🐱
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
