@@ -185,11 +185,11 @@ function handleYesClick(celebration, catContainer) {
 // ----- Rotating Celebration Messages -----
 function startCelebrationMessages() {
     const celebrationMessages = [
-        "🎉 PURR-FECT! 🎉<br>*Happy cat noises* 😸<br>You're the best Valentine ever! 💝<br>*Headbumps you affectionately* 🐱",
-        "🎊 OMG YES! 🎊<br>*Cat does backflip* 🤸<br>This is the best day ever! 🌟<br>*Purrs intensely* 😻",
-        "💕 I KNEW IT! 💕<br>*Spins around in circles* 🌀<br>We're going to have so much fun! 🎮<br>*Brings you a toy mouse* 🐭",
-        "🌈 MEOW-GICAL! 🌈<br>*Does happy paw dance* 🐾<br>You won't regret this! 💯<br>*Knocks over water bowl in excitement* 💦",
-        "✨ BEST. DAY. EVER! ✨<br>*Runs around like crazy* 🏃<br>I love you so much! ❤️<br>*Falls off table from excitement* 😹"
+      "🎉 PURR-FECT! 🎉<br>You just made my heart melt 💝<br>I’m so lucky to have you ❤️",
+      "🎊 YOU SAID YES! 🎊<br>Best moment ever 🌸<br>I can’t stop smiling 💕",
+      "💕 I KNEW IT! 💕<br>You make my world brighter ✨<br>Let’s make memories together 💖",
+      "🌈 MEOW-GICAL! 🌈<br>This feels like a dream 💫<br>I’m so happy it’s you 💞",
+      "✨ BEST. DAY. EVER! ✨<br>My heart is yours ❤️<br>Always and forever 💌"
     ];
     
     let messageIndex = 0;
